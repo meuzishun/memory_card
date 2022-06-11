@@ -2,11 +2,11 @@ import React from 'react';
 import HighScore from './HighScore';
 import CurrentScore from './CurrentScore';
 
-function Scoreboard() {
+function Scoreboard(props) {
   return (
     <div>
       <HighScore />
-      <CurrentScore />
+      <CurrentScore score={props.score} />
     </div>
   );
 }

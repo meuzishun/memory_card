@@ -71,7 +71,7 @@ class App extends Component {
     return (
       <div className='App'>
         <Header onClick />
-        <Scoreboard />
+        <Scoreboard score={this.state.previouslyChosen.length} />
         <Gameboard
           choices={this.state.randomChoices}
           cb={this.handleCardClick}
