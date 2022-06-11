@@ -1,7 +1,21 @@
 import React from 'react';
 
-function Card() {
-  return <div>Card</div>;
+function Card(props) {
+  const iconLookup = {
+    hearts: 'cards-heart',
+    clubs: 'cards-club',
+    spades: 'cards-spade',
+    diamonds: 'cards-diamond',
+  };
+  return (
+    <div onClick={props.cb} data-rank={props.rank} data-suit={props.suit}>
+      <p>{props.rank}</p>
+      <span
+        className='iconify'
+        data-icon={`mdi-${iconLookup[props.suit]}`}
+      ></span>
+    </div>
+  );
 }
 
 export default Card;

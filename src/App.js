@@ -12,9 +12,11 @@ class App extends Component {
 
     this.state = {
       randomChoices: [],
+      previouslyChosen: [],
     };
 
     this.chooseRandomCards = this.chooseRandomCards.bind(this);
+    this.handleCardClick = this.handleCardClick.bind(this);
   }
 
   chooseRandomCards() {
@@ -25,24 +27,55 @@ class App extends Component {
         ...allCards.splice(Math.floor(Math.random() * allCards.length), 1)
       );
     }
-    console.log('original', buildCards);
-    console.log('copied', allCards);
+    // console.log('original', buildCards);
+    // console.log('copied', allCards);
     this.setState(
       {
         randomChoices,
-      },
-      () => {
-        console.log(this.state.randomChoices);
       }
+      // () => {
+      //   console.log(this.state.randomChoices);
+      // }
     );
+  }
+
+  handleCardClick(e) {
+    const card = e.currentTarget;
+    const { rank, suit } = card.dataset;
+    const alreadyChosen = this.state.previouslyChosen.some((choice) => {
+      return choice.rank === rank && choice.suit === suit;
+    });
+    console.log(alreadyChosen);
+    if (!alreadyChosen) {
+      this.setState(
+        {
+          previouslyChosen: [...this.state.previouslyChosen, { rank, suit }],
+        },
+        () => {
+          console.log(this.state.previouslyChosen);
+        }
+      );
+    } else {
+      this.setState(
+        {
+          previouslyChosen: [],
+        },
+        () => {
+          console.log(this.state.previouslyChosen);
+        }
+      );
+    }
   }
 
   render() {
     return (
       <div className='App'>
-        <Header />
+        <Header onClick />
         <Scoreboard />
-        <Gameboard />
+        <Gameboard
+          choices={this.state.randomChoices}
+          cb={this.handleCardClick}
+        />
         <Footer />
         <button onClick={this.chooseRandomCards}>Log some cards</button>
       </div>
