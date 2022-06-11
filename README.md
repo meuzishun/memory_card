@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Memory Card Game
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). It was created for partial fulfillment of [The Odin Project](https://www.theodinproject.com/) Curriculum.
 
 ## Available Scripts
 
