@@ -17,6 +17,7 @@ class App extends Component {
     };
 
     this.chooseRandomCards = this.chooseRandomCards.bind(this);
+    this.emptyChosenCards = this.emptyChosenCards.bind(this);
     this.handleCardClick = this.handleCardClick.bind(this);
   }
 
@@ -40,6 +41,12 @@ class App extends Component {
     );
   }
 
+  emptyChosenCards() {
+    this.setState({
+      randomChoices: [],
+    });
+  }
+
   handleCardClick(e) {
     const card = e.currentTarget;
     const { rank, suit } = card.dataset;
@@ -56,15 +63,18 @@ class App extends Component {
           console.log(this.state.previouslyChosen);
         }
       );
+      this.chooseRandomCards();
     } else {
       this.setState(
         {
           previouslyChosen: [],
+          highScore: this.state.previouslyChosen.length,
         },
         () => {
           console.log(this.state.previouslyChosen);
         }
       );
+      this.emptyChosenCards();
     }
   }
 
