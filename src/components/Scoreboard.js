@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from '../styles/Scoreboard.module.css';
 import HighScore from './HighScore';
 import CurrentScore from './CurrentScore';
 

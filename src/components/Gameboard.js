@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from '../styles/Gameboard.module.css';
 import Card from './Card';
 import uniqid from 'uniqid';
 
