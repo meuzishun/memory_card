@@ -17,17 +17,21 @@
 }
 
 .header * {
-  color: rgb(234, 219, 164);
 }
 
 .header h1 {
-  font-size: 4rem;
+  font-size: 5rem;
+  font-family: 'Rye', cursive;
   font-weight: normal;
+  color: rgb(234, 219, 164);
+  text-shadow: 1px 3px 0.5rem black;
 }
 
 .header p,
 .header em {
   font-size: 1.5rem;
+  color: rgb(234, 219, 164);
+  text-shadow: 1px 3px 0.5rem black;
 }
 
 .header button {
@@ -37,9 +41,12 @@
   background-color: #018f29;
   color: #fff;
   cursor: pointer;
+  box-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.501);
   transition: all 250ms ease-in-out;
 }
 
 .header button:hover {
+  color: #eee;
+  box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.501);
   transform: scale(1.1);
 }
