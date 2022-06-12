@@ -68,7 +68,10 @@ class App extends Component {
       this.setState(
         {
           previouslyChosen: [],
-          highScore: this.state.previouslyChosen.length,
+          highScore:
+            this.state.previouslyChosen.length > this.state.highScore
+              ? this.state.previouslyChosen.length
+              : this.state.highScore,
         },
         () => {
           console.log(this.state.previouslyChosen);
