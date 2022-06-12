@@ -6,6 +6,7 @@
   display: grid;
   grid-template-rows: repeat(2, max-content);
   justify-content: end;
+  justify-items: end;
   color: rgb(234, 219, 164);
 }
 
