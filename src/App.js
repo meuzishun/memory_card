@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './styles/App.css';
+import styles from './styles/App.module.css';
 import Header from './components/Header';
 import Scoreboard from './components/Scoreboard';
 import Gameboard from './components/Gameboard';
@@ -69,7 +69,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className='App'>
+      <div className={styles.App}>
         <Header onClick />
         <Scoreboard score={this.state.previouslyChosen.length} />
         <Gameboard
