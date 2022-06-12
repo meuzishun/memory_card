@@ -53,6 +53,7 @@ class App extends Component {
       this.setState({
         previouslyChosen: [...this.state.previouslyChosen, { rank, suit }],
       });
+      this.chooseRandomCards();
     } else {
       this.setState({
         previouslyChosen: [],
