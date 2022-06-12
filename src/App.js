@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './styles/App.css';
 import Header from './components/Header';
 import Scoreboard from './components/Scoreboard';
 import Gameboard from './components/Gameboard';
