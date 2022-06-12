@@ -1,0 +1,10 @@
+.footer {
+  display: grid;
+  place-items: center center;
+  color: rgb(234, 219, 164);
+}
+
+.footer p {
+  padding: 1rem;
+  font-size: 0.8rem;
+}

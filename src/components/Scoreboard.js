@@ -5,8 +5,8 @@ import CurrentScore from './CurrentScore';
 
 function Scoreboard(props) {
   return (
-    <div>
-      <HighScore />
+    <div className={styles.scoreboard}>
+      <HighScore high={props.high} />
       <CurrentScore score={props.score} />
     </div>
   );

@@ -5,7 +5,7 @@ import uniqid from 'uniqid';
 
 function Gameboard(props) {
   return (
-    <div>
+    <div className={styles.gameboard}>
       {props.choices.map((choice) => (
         <Card
           key={uniqid()}

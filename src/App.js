@@ -13,6 +13,7 @@ class App extends Component {
     this.state = {
       randomChoices: [],
       previouslyChosen: [],
+      highScore: 0,
     };
 
     this.chooseRandomCards = this.chooseRandomCards.bind(this);
@@ -70,14 +71,17 @@ class App extends Component {
   render() {
     return (
       <div className={styles.App}>
-        <Header onClick />
-        <Scoreboard score={this.state.previouslyChosen.length} />
+        <Header startGame={this.chooseRandomCards} />
+        <Scoreboard
+          score={this.state.previouslyChosen.length}
+          high={this.state.highScore}
+        />
         <Gameboard
           choices={this.state.randomChoices}
           cb={this.handleCardClick}
         />
         <Footer />
-        <button onClick={this.chooseRandomCards}>Log some cards</button>
+        {/* <button onClick={this.chooseRandomCards}>Log some cards</button> */}
       </div>
     );
   }

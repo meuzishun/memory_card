@@ -1,0 +1,53 @@
+.card {
+  /* height: 300px; */
+  width: 100%;
+  aspect-ratio: 5 / 7;
+  border: none;
+  border-radius: 0.5rem;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: 0.5rem;
+  background-color: rgb(221, 221, 221);
+  box-shadow: 0.1rem 0.1rem 0.1rem rgb(0, 0, 0);
+  transition: all 250ms ease-in-out;
+}
+
+.card:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.75);
+  background-color: rgb(238, 238, 238);
+}
+
+.top,
+.bottom {
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+}
+
+.card p {
+  font-size: 1.5rem;
+}
+
+.center {
+  display: grid;
+  place-content: center;
+}
+
+.center * {
+  font-size: 5rem;
+}
+
+.bottom {
+  transform: rotate(180deg);
+}
+
+[data-suit='hearts'],
+[data-suit='diamonds'] {
+  color: rgb(204, 0, 0);
+}
+
+[data-suit='spades'],
+[data-suit='clubs'] {
+  color: rgb(40, 40, 40);
+}

@@ -1,0 +1,45 @@
+.header {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: max-content;
+  justify-items: center;
+  grid-gap: 1rem;
+  /* ! This background issue is frustrating */
+  /* background-color: rgb(129, 129, 129); */
+  /* background-image: url('../../wood.png'); */
+  background: url('../../wood.png') no-repeat, rgb(238, 238, 238);
+  /* background-repeat: no-repeat; */
+  /* background-size: cover; */
+  /* background-position: center; */
+  /* background: rgb(47, 47, 47), url('../../wood.png') no-repeat center cover; */
+  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.51);
+}
+
+.header * {
+  color: rgb(234, 219, 164);
+}
+
+.header h1 {
+  font-size: 4rem;
+  font-weight: normal;
+}
+
+.header p,
+.header em {
+  font-size: 1.5rem;
+}
+
+.header button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 1000px;
+  background-color: #018f29;
+  color: #fff;
+  cursor: pointer;
+  transition: all 250ms ease-in-out;
+}
+
+.header button:hover {
+  transform: scale(1.1);
+}
