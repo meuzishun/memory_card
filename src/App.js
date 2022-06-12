@@ -24,21 +24,16 @@ class App extends Component {
   chooseRandomCards() {
     const allCards = [...buildCards];
     const randomChoices = [];
+
     for (let i = 0; i < 10; i++) {
       randomChoices.push(
         ...allCards.splice(Math.floor(Math.random() * allCards.length), 1)
       );
     }
-    // console.log('original', buildCards);
-    // console.log('copied', allCards);
-    this.setState(
-      {
-        randomChoices,
-      }
-      // () => {
-      //   console.log(this.state.randomChoices);
-      // }
-    );
+
+    this.setState({
+      randomChoices,
+    });
   }
 
   emptyChosenCards() {
@@ -53,30 +48,19 @@ class App extends Component {
     const alreadyChosen = this.state.previouslyChosen.some((choice) => {
       return choice.rank === rank && choice.suit === suit;
     });
-    console.log(alreadyChosen);
+
     if (!alreadyChosen) {
-      this.setState(
-        {
-          previouslyChosen: [...this.state.previouslyChosen, { rank, suit }],
-        },
-        () => {
-          console.log(this.state.previouslyChosen);
-        }
-      );
-      this.chooseRandomCards();
+      this.setState({
+        previouslyChosen: [...this.state.previouslyChosen, { rank, suit }],
+      });
     } else {
-      this.setState(
-        {
-          previouslyChosen: [],
-          highScore:
-            this.state.previouslyChosen.length > this.state.highScore
-              ? this.state.previouslyChosen.length
-              : this.state.highScore,
-        },
-        () => {
-          console.log(this.state.previouslyChosen);
-        }
-      );
+      this.setState({
+        previouslyChosen: [],
+        highScore:
+          this.state.previouslyChosen.length > this.state.highScore
+            ? this.state.previouslyChosen.length
+            : this.state.highScore,
+      });
       this.emptyChosenCards();
     }
   }
@@ -94,7 +78,6 @@ class App extends Component {
           cb={this.handleCardClick}
         />
         <Footer />
-        {/* <button onClick={this.chooseRandomCards}>Log some cards</button> */}
       </div>
     );
   }
