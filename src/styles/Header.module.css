@@ -37,6 +37,8 @@
   border-radius: 1000px;
   background-color: #018f29;
   color: #fff;
+  font-size: 1.5rem;
+  font-weight: 500;
   cursor: pointer;
   box-shadow: 0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.501);
   transition: all 150ms ease-in-out;
