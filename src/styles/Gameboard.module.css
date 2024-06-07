@@ -5,7 +5,4 @@
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(2, auto);
   grid-gap: 2rem;
-  width: 65%;
-  max-width: 1000px;
-  /* background-color: #018f29; */
 }
